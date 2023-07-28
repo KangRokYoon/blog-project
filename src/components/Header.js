@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { BsList } from 'react-icons/bs'
+import Sidebar from "./Sidebar";
+import { useState } from "react";
 
 const HeaderStyled = styled.div`
     padding: 30px;
@@ -17,6 +19,9 @@ const HeaderTitle = styled.p`
     margin: 0; /* Remove any default margin to avoid spacing issues */
     flex: 1; /* Allow the title to take the available space and center it */
 `
+const Loginbutton = styled.div`
+    color: #eaecef;
+`
 
 const IconWrapper = styled.div`
     font-size: 60px;
@@ -24,12 +29,16 @@ const IconWrapper = styled.div`
 `
 
 const Header = () => {
+    const [showNav, setShowNav] =useState(false);
     return (
         <HeaderStyled>
             <IconWrapper>
-                <BsList />
+                <BsList onClick={() => setShowNav(!showNav)}/>
+                {showNav && <Sidebar/>}
             </IconWrapper>
             <HeaderTitle className="title">KangRok's Blog</HeaderTitle>
+            
+            <Loginbutton >로그인</Loginbutton>
         </HeaderStyled>
     );
 }
