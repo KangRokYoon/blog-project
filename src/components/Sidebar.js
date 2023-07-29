@@ -3,19 +3,18 @@ import styled from "styled-components";
 import Image from "../assets/image.png"
 
 const SideNav = styled.div`
-    width: 240px;
+    width: 230px;
     background: gray;
     position: absolute;
-    height: 95vh;
+    height: 100%;
     padding: 0 30px;
     transition: all 1s;
     left:0;
 `
 const Ul = styled.ul`
     padding: 0;
-`
 
-const Li= styled.li`
+   li {
     list-style-type: none;
     margin: 10px 0;
     color: #eaecef;
@@ -24,6 +23,12 @@ const Li= styled.li`
     display: block;
     padding: 10px 15px;
     border-radius: 6px;
+   }
+
+   li:hover,
+   li.active {
+    background: #172b4d;
+   }
 `
 const Infomation = styled.div`
    width: 200px;
@@ -32,6 +37,7 @@ const Infomation = styled.div`
     margin-left: 0;
     text-align: center;
     padding: 20px;
+    padding-top:50px;
 
     img {
       border-radius: 50%;
@@ -43,6 +49,7 @@ const Infomation = styled.div`
 
     p {
     color: white;
+    font-size: 20px;
 }
 `
 const Searchcontainer = styled.div`
@@ -81,11 +88,11 @@ const Sidebar = () => {
             <i class="fa-solid fa-magnifying-glass"></i>
         </Searchcontainer>
          <Ul>
-            <Li onClick={() => {navigate('/list')}}>list</Li>
-            <Li onClick={() => {navigate('/블로그 메뉴')}}>블로그 메뉴</Li>
-            <Li onClick={() => {navigate('/인기 글')}}>인기 글</Li>
-            <Li onClick={() => {navigate('/home')}}>home</Li>
-            <Li onClick={() => {navigate('/설정')}}>설정</Li>
+            <li onClick={() => {navigate('/list')}}>list</li>
+            <li onClick={() => {navigate('/블로그 메뉴')}}>블로그 메뉴</li>
+            <li onClick={() => {navigate('/인기 글')}}>인기 글</li>
+            <li onClick={() => {navigate('/home')}}>home</li>
+            <li onClick={() => {navigate('/설정')}}>설정</li>
          </Ul>
       </SideNav>
     )

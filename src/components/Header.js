@@ -26,6 +26,7 @@ const Loginbutton = styled.div`
 const IconWrapper = styled.div`
     font-size: 60px;
     color: #eaecef;
+    
 `
 
 const Header = () => {
@@ -44,3 +45,4 @@ const Header = () => {
 }
 
 export default Header;
+
